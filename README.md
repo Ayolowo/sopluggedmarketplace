@@ -22,7 +22,7 @@ A minimal viable product for connecting creators with brands, built with React a
 
 ```bash
 git clone <your-repo-url>
-cd creator-brand-marketplace
+cd soplugged-marketplace
 npm install
 ```
 
@@ -34,10 +34,10 @@ npm install
 cp .env.example .env
 ```
 
-Add Supabase credentials to `.env`:
+2. Add Supabase credentials to `.env`:
 
 REACT_APP_SUPABASE_URL=your_supabase_project_url_here
-REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key_here
+REACT_APP_SUPABASE_PUBLISHABLE_DEFAULT_KEY=your_supabase_publishable_key_here
 
 ### 3. Supabase Database Setup
 

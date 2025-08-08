@@ -1,4 +1,4 @@
-# Creator-Brand Marketplace MVP
+# So plugged Marketplace MVP
 
 A minimal viable product for connecting creators with brands, built with React and Supabase.
 
@@ -29,21 +29,22 @@ npm install
 ### 2. Environment Variables
 
 1. Copy `.env.example` to `.env`:
+
 ```bash
 cp .env.example .env
 ```
 
-2. Add your Supabase credentials to `.env`:
-```
+Add Supabase credentials to `.env`:
+
 REACT_APP_SUPABASE_URL=your_supabase_project_url_here
 REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key_here
-```
 
 ### 3. Supabase Database Setup
 
 Create the following tables in your Supabase database:
 
 #### Table: userssop
+
 ```sql
 CREATE TABLE userssop (
   id UUID REFERENCES auth.users(id) ON DELETE CASCADE,
@@ -68,6 +69,7 @@ CREATE POLICY "Users can insert own profile" ON userssop FOR INSERT WITH CHECK (
 ```
 
 #### Table: briefs
+
 ```sql
 CREATE TABLE briefs (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
@@ -91,7 +93,7 @@ CREATE POLICY "All users can create briefs" ON briefs FOR INSERT TO authenticate
 ### 4. Run the Application
 
 ```bash
-npm start
+npm/bun start
 ```
 
 The app will be available at `http://localhost:3000`.
@@ -99,21 +101,23 @@ The app will be available at `http://localhost:3000`.
 ## Customization
 
 ### Branding
+
 The app uses CSS variables for easy customization. Update the following in `src/index.css`:
 
 1. **Colors**: Update the `:root` CSS variables at the top of the file
-2. **Fonts**: Replace the Google Fonts link in `public/index.html` and update the `--font-family` variable
+2. **Fonts**: Replace the Google Fonts link in `public/index.html` and update the `--font-family`: "Plus Jakarta Sans", "Plus Jakarta Sans Fallback"
 3. **Logo**: Replace "CreatorBridge" text in `src/components/Navbar.js` with your logo
 4. **App Name**: Update the title and meta tags in `public/index.html`
 
 ### Categories
+
 Update the categories array in both:
+
 - `src/pages/Onboarding.js`
 - `src/pages/SubmitBrief.js`
 
 ## Project Structure
 
-```
 src/
 ├── components/
 │   ├── Navbar.js          # Navigation component
@@ -128,7 +132,6 @@ src/
 ├── index.css              # Global styles and CSS variables
 ├── index.js               # App entry point
 └── App.js                 # Main app component with routing
-```
 
 ## User Flow
 
